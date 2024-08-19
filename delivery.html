@@ -1,7 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Request Example</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Data from GET Request</h1>
+    <div id="result"></div>
+
+    <script>
+        // JavaScript to handle the GET request
+        fetch('https://developerzvum.github.io/delivery') // Replace with your API endpoint
+            .then(response => response.json())
+            .then(data => {
+                // Display the data on the page
+                document.getElementById('result').innerText = JSON.stringify(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
 </body>
 </html>
